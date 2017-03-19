@@ -19,7 +19,7 @@ During this lab, we will also use several commands of the network API.
 
 ## Default networks
 
-Using the network API, let's list the available networks available on your fresh instance.
+Using the network API, let's list the networks available on your fresh instance.
 
 ```.term1
 docker network ls
@@ -34,7 +34,7 @@ eb1c445f366e        host                host                local
 72ebaad33d0e        none                null                local
 ```
 
-This tells us that 3 networks are avaivable on the host. Let's see the available interfaces on our Linux host.
+This tells us that 3 networks are available on the host. Let's see the available interfaces on our Linux host.
 
 ```.term1
 ip a show
@@ -254,7 +254,7 @@ We then get the IP of cb1 using the inspect command.
 docker container inspect -f "{{ "{{ json .NetworkSettings "}}}}" cb1 | python -m json.tool
 ```
 
-From another container, also attached to the **bnet** network, we will check how we can adress **cb1**.
+From another container, also attached to the **bnet** network, we will check how we can address **cb1**.
 
 ```.term1
 docker container run -ti --network bnet alpine sh
@@ -272,7 +272,7 @@ Ping cb1 from it's name
 ping -c 3 cb1
 ```
 
-In the case of a user-defined bridge network we can that the containers can be addressed by their name as well.
+In the case of a user-defined bridge network we can see that the containers can be addressed by their name as well.
 
 Let's exit the container.
 
@@ -282,7 +282,7 @@ exit
 
 ## Overlay network
 
-Whereas a bridge network provides conectivity between containers that are on the same host, an overlay network enables connectivity between containers across hosts.
+Whereas a bridge network provides a connectivity between containers that are on the same host, an overlay network enables connectivity between containers across hosts.
 
 There are several possibilities to create a cluster of Docker hosts:
 - setup several Docker engines that communicate through a key value store (like Consul, Etcd or Zookeeper). Some additional options need to be provided to each Docker daemon so it targets the KV store
