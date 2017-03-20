@@ -282,7 +282,7 @@ exit
 
 ## Overlay network
 
-Whereas a bridge network provides a connectivity between containers that are on the same host, an overlay network enables connectivity between containers across hosts.
+Whereas a bridge network provides connectivity between containers that are on the same host, an overlay network enables connectivity between containers across hosts.
 
 There are several possibilities to create a cluster of Docker hosts:
 - setup several Docker engines that communicate through a key value store (like Consul, Etcd or Zookeeper). Some additional options need to be provided to each Docker daemon so it targets the KV store
